@@ -9,12 +9,12 @@ public class ArabicToRomanMumberConverter {
         if (noNumber)
             return getDefaultRomanNumber();
 
-        String romanNumber = getRepitingRomanNumber(arabicNumber);
+        String romanNumber = getRomanNumber(arabicNumber);
             return romanNumber;
         }
 
 
-    private String getRepitingRomanNumber(int arabicNumber) {
+    private String getRomanNumber(int arabicNumber) {
         String romanNumber = "";
         ArrayList<PairOfDigits> digits =new ArrayList<PairOfDigits>();
         digits.add(new PairOfDigits(5,'V'));
@@ -29,6 +29,7 @@ public class ArabicToRomanMumberConverter {
 
         return romanNumber;
     }
+
 
     private String getDefaultRomanNumber () {
             return "";
