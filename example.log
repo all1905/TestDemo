@@ -1,0 +1,5 @@
+DEBUG main Numbers - деление на ноль
+java.lang.ArithmeticException: / by zero
+	at Numbers.sum(Numbers.java:18)
+	at Program.main(Program.java:10)
+DEBUG main Numbers - debug
