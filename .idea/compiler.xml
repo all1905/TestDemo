@@ -7,7 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="TestDemo" />
+        <module name="UnitTestAnd_TDD_ConverterArabicNumber_To_RomanNumber" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
