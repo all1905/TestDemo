@@ -7,22 +7,23 @@ public class ArabicToRomanMumberConverter {
     public String Convert(int arabicNumber) {
         boolean noNumber = arabicNumber == 0;
         if (noNumber)
-            return getDefaultRomanNumber();
+          return getDefaultRomanNumber();
 
         String romanNumber = getRomanNumber(arabicNumber);
-            return romanNumber;
-        }
+        romanNumber=romanNumber.replace("IIII","IV");
+        return romanNumber;
+    }
 
 
     private String getRomanNumber(int arabicNumber) {
-        String romanNumber = "";
+       String romanNumber = "";
         ArrayList<PairOfDigits> digits =new ArrayList<PairOfDigits>();
         digits.add(new PairOfDigits(5,'V'));
         digits.add(new PairOfDigits(1,'I'));
 
         for(PairOfDigits digit :digits){
             while (arabicNumber >= digit.getArabic()) {
-                romanNumber += digit.getRomen();
+                romanNumber += digit.getRoman();
                 arabicNumber-=digit.getArabic();
             }
         }
