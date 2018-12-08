@@ -27,7 +27,7 @@ public class ArabicToRomanMumberConverter {
             }
         }
 
-        return
+        return romanNumber;
     }
 
     private String getDefaultRomanNumber () {
