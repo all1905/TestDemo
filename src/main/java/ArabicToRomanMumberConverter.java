@@ -18,6 +18,7 @@ public class ArabicToRomanMumberConverter {
     private String getRomanNumber(int arabicNumber) {
        String romanNumber = "";
         ArrayList<PairOfDigits> digits =new ArrayList<PairOfDigits>();
+        digits.add(new PairOfDigits(10,'X'));
         digits.add(new PairOfDigits(5,'V'));
         digits.add(new PairOfDigits(1,'I'));
 

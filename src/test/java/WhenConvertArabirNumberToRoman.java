@@ -54,4 +54,9 @@ public class WhenConvertArabirNumberToRoman {
         String romanNumber = convertToRomans(4);
         assertEquals("IV",romanNumber);
     }
+    @Test
+    public void Convert_10_To_X(){
+        String romanNumber = convertToRomans(10);
+        assertEquals("X",romanNumber);
+    }
 }
