@@ -78,5 +78,26 @@ public class WhenConvertArabirNumberToRoman {
         String romanNumber = convertToRomans(19);
         assertEquals("XIX", romanNumber);
     }
+    @Test
+    public void Convert_20_To_XX() {
+        String romanNumber = convertToRomans(20);
+        assertEquals("XX", romanNumber);
+    }
+    @Test
+    public void Convert_15_To_XV() {
+        String romanNumber = convertToRomans(15);
+        assertEquals("XV", romanNumber);
+    }
+    @Test
+    public void Convert_17_To_XVII() {
+        String romanNumber = convertToRomans(17);
+        assertEquals("XVII", romanNumber);
+    }
+    @Test
+    public void Convert_39_To_XXXIX() {
+        String romanNumber = convertToRomans(39);
+        assertEquals("XXXIX", romanNumber);
+    }
+
 
 }

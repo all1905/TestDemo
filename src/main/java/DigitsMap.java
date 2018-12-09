@@ -17,6 +17,6 @@ public class DigitsMap {
             }
             
         }
-        throw  new IllegalArgumentException();
+        return digit;
     }
 }
