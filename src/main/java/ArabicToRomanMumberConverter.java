@@ -1,5 +1,15 @@
+import java.util.Scanner;
+
 public class ArabicToRomanMumberConverter {
+    public int inputArabicNuber(){
+        System.out.println("ввести число от 0 до 39  ");
+        Scanner in = new Scanner(System.in);
+        int arabicNumber= in.nextInt();
+        return arabicNumber;
+    }
+
     public String Convert(int arabicNumber) {
+
         boolean noNumber = arabicNumber == 0;
         if (noNumber)
           return getDefaultRomanNumber();
@@ -20,6 +30,7 @@ public class ArabicToRomanMumberConverter {
             }
         }
         return romanNumber.toString();
+
 
     }
 
