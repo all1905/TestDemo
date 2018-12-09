@@ -19,7 +19,7 @@ public class ArabicToRomanMumberConverter {
                         romanNumber.substring(i+1);
             }
         }
-        return romanNumber;
+        return romanNumber.toString();
 
     }
 
