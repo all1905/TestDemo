@@ -1,8 +1,3 @@
-
-
-import java.util.ArrayList;
-
-
 public class ArabicToRomanMumberConverter {
     public String Convert(int arabicNumber) {
         boolean noNumber = arabicNumber == 0;
@@ -11,18 +6,33 @@ public class ArabicToRomanMumberConverter {
 
         String romanNumber = getRomanNumber(arabicNumber);
         romanNumber=romanNumber.replace("IIII","IV");
+        romanNumber=replaceInterlasedDigits(romanNumber);
         return romanNumber;
+    }
+
+    private  static String replaceInterlasedDigits(String romanNumber) {
+        for (int i = 2; i < romanNumber.length(); i++) {
+            if (romanNumber.charAt(i-2)==romanNumber.charAt(i)&&romanNumber.charAt(i-1)!=romanNumber.charAt(i)){
+                romanNumber=romanNumber.substring(0,i-2)+
+                        romanNumber.charAt(i-1)+
+                        nextDigit(romanNumber.charAt(i))+
+                        romanNumber.substring(i+1);
+            }
+        }
+        return romanNumber.toString();
+
+    }
+
+    private static char nextDigit(char digit) {
+        return new DigitsMap().nextDigit(digit);
     }
 
 
     private String getRomanNumber(int arabicNumber) {
        String romanNumber = "";
-        ArrayList<PairOfDigits> digits =new ArrayList<PairOfDigits>();
-        digits.add(new PairOfDigits(10,'X'));
-        digits.add(new PairOfDigits(5,'V'));
-        digits.add(new PairOfDigits(1,'I'));
+      DigitsMap digitsMap = new DigitsMap();
 
-        for(PairOfDigits digit :digits){
+        for(PairOfDigits digit :digitsMap.digits){
             while (arabicNumber >= digit.getArabic()) {
                 romanNumber += digit.getRoman();
                 arabicNumber-=digit.getArabic();
@@ -32,10 +42,10 @@ public class ArabicToRomanMumberConverter {
         return romanNumber;
     }
 
-
     private String getDefaultRomanNumber () {
-            return "";
-        }
+        return "";
+    }
+
     }
 
 
